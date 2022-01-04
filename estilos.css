@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(fondo.jpg);
+    text-align: center;
+}
+.wrap{
+    width: 1100px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta-wrap{
+    margin: 10px;
+    -webkit-perspective: 800;
+    perspective: 800;
+}
+.tarjeta{
+    width: 300px;
+    height: 350px;
+    background: #e8f2f5;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: .7s ease;
+    -webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    -moz-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    
+}
+.adelante, .atras{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.adelante{
+    width: 100%;
+}
+.atras{
+    transform: rotateY(180deg);
+    
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Oswald';
+}
+
+.tarjeta-wrap:hover .tarjeta{
+    transform: rotateY(180deg);
+
+}
+
+.card1{
+    background-image: url(img1.jpg);
+    background-size: cover;
+}
+.card2{
+    background-image: url(img.jpg);
+    background-size: cover;
+}
+.card3{
+    background-image: url(img3.jpg);
+    background-size: cover;
+}
+h1{
+    display: inline-block;
+    position: relative;
+    color:black;
+    font-family: 'Dancing Script', cursive;
+}
+h1::after,h1::before{
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em;
+    transform:scale(0);
+    transition: all 0.4s ease-in;
+}
+h1:hover::before, h1:hover::after{
+    transform: scale(1);
+}
+h1::before{
+    left: -140px;
+}
+h1::after{
+    right: -140px;
+}
